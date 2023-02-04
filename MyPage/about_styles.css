@@ -1,0 +1,666 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    background-color: #020A13;
+    background-image: url(images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    /*unselectable*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*header*/
+header{
+    height: 5rem;
+    padding-top: 16px;
+    text-align: center;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*logo*/
+.logo-container{
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+.logo-container img{
+    width: 60%;
+    height: auto;
+}
+
+/*nav container*/
+.nav-container ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-size: 20px;
+    padding-right: 50px;
+}
+.nav-container a{
+    text-decoration: none;
+    color: white;
+}
+.nav-container a:hover{
+    color: #07F0FF;
+}
+
+/*navbar*/
+.nav-logo{
+    display: none;
+}
+nav ul li a{
+    display: block;
+}
+.hamburger{
+    display: none;
+    height: fit-content;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.hamburger div{
+    width: 30px;
+    height: 2px;
+    margin: 6px 0;
+    background: white;
+}
+.nav-social-container{
+    display: none;
+}
+
+/*main*/
+main{
+    padding: 20px 100px;
+    text-align: center;
+}
+main h2{
+    font-size: 48px;
+    padding-bottom: 25px;
+}
+.about-me-container{
+    display: flex;
+    text-align: left;
+    gap: 30px;
+}
+.about-me-container h3{
+    font-size: 36px;
+}
+.about-me-container p{
+    font-size: 24px;
+}
+.about-me-container .vertical-hr{
+    border: none;
+    border-left: 0px solid hsla(200, 10%, 50%,100);
+    height: 50vh;
+    width: 0px; 
+    box-shadow: rgba(90, 181, 255, 0.4) 5px 5px, rgba(89, 23, 255, 0.3) 10px 10px, rgba(255, 6, 172, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    padding-right: 1px;
+}
+
+.designer-side-container{
+    padding-left: 35px;
+}
+
+.developer-more{
+    padding-top: 50px;
+}
+.view-more-btn {
+    background: none;
+    background-color:none;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 24px;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(to left,#d53a9d,#07f0ff);
+    -webkit-animation: btn-prj 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: btn-prj 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+
+.content {
+    
+    display: none;
+    overflow: hidden;
+    background:none;
+    color: white;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(to left,#d53a9d,#07f0ff);
+    -webkit-animation: btn-prj 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: btn-prj 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+
+.content ul{
+    display: flex;
+    
+    list-style: none;
+    padding-right: 50px;
+    gap: 5px;
+}
+.content ul li{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    list-style: none;
+    font-size: 24px;
+    gap: 10px;
+}
+.content ul li i{
+    font-size: 32px;
+    color: white;
+}
+.horizontal-hr{
+    border: 0;
+    width: 2px;
+    height: 50px;
+    background-image: linear-gradient(to right, rgba(225, 222, 222, 0), rgba(104, 202, 251, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+
+
+
+
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    box-shadow: rgba(158, 158, 158, 0.25) 0px 5px 15px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 0 10px 10px 0;
+}
+  
+  /* Style the icon bar links */
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    color: white;
+    font-size: 30px;
+}
+  /* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+    background-color: white;
+    color: black;
+}
+.icon-bar .git:hover{
+    border-radius: 0 10px 0 0;
+}
+  
+.icon-bar .google:hover{
+    border-radius: 0 0 10px 0;
+}
+  
+
+/*MEDIA QUE */
+
+@media screen and (max-width: 1150px) and (min-width: 768px){
+
+    .navbar{
+        position: absolute;
+        left: -300px;
+        top: 0;
+        z-index: 999;
+        width: 300px;
+        height: 100vh;
+        background: url(images/nav_background.png);
+        transition: 0.2s;
+        box-shadow: none;
+    }
+    #nav-check:checked ~ .navbar{
+        left: 0;
+    }
+    .nav-logo{
+        display: block;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 25px;
+    }
+    .nav-logo img{
+        width: 70%;
+    }
+    nav .nav-section a{
+        margin-bottom: 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    nav .nav-section{
+        display: block;
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+    .hamburger{
+        display: block;
+        float: right;
+        padding-right: 30px;
+    }
+    .pager{
+        display: block;
+    }
+    .nav-projects{
+        display: block;
+    }
+    .header-container{
+        align-items: center;
+        justify-content: space-between;
+    }
+    .page-container{
+        display: none;
+    }
+    .nav-social-container{
+        display: block;
+        padding-top: 50px;
+    }
+    .nav-social-container ul{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    main{
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    .about-me-container{
+        flex-direction: column;
+    }
+    .about-me-container .vertical-hr{
+        border: none;
+        border-left: 0px solid hsla(200, 10%, 50%,100);
+        height: 1px;
+        width: 100%; 
+        box-shadow: rgba(90, 181, 255, 0.4) 5px 5px, rgba(89, 23, 255, 0.3) 10px 10px, rgba(255, 6, 172, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        padding-right: 1px;
+    }
+    .designer-side-container{
+        padding-left: 0;
+    }
+
+    
+}
+
+@media screen and (max-width: 767px) and (min-width: 425px){
+
+    .navbar{
+        position: absolute;
+        left: -300px;
+        top: 0;
+        z-index: 999;
+        width: 300px;
+        height: 100vh;
+        background: url(images/nav_background.png);
+        transition: 0.2s;
+        box-shadow: none;
+    
+    }
+    
+    #nav-check:checked ~ .navbar{
+        left: 0;
+    }
+    .nav-logo{
+        display: block;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 25px;
+    }
+    .nav-logo img{
+        width: 70%;
+    }
+    nav .nav-section a{
+        margin-bottom: 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    nav .nav-section{
+        display: block;
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+    .hamburger{
+        display: block;
+        float: right;
+        padding-right: 30px;
+        
+    }
+    .pager{
+        display: block;
+    }
+    .nav-projects{
+        display: block;
+    }
+    .header-container{
+        align-items: center;
+        justify-content: space-between;
+    }
+    .page-container{
+        display: none;
+    }
+    .nav-social-container{
+        display: block;
+        padding-top: 50px;
+    }
+    .nav-social-container ul{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .icon-bar{
+        display: none;
+    }
+    main{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 50px;
+        text-align: center;
+    }
+    .about-me-container{
+        flex-direction: column;
+    }
+    .about-me-container .vertical-hr{
+        border: none;
+        border-left: 0px solid hsla(200, 10%, 50%,100);
+        height: 1px;
+        width: 100%; 
+        box-shadow: rgba(90, 181, 255, 0.4) 5px 5px, rgba(89, 23, 255, 0.3) 10px 10px, rgba(255, 6, 172, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        padding-right: 1px;
+    }
+    .content ul li{
+        font-size: 14px;
+    }
+    .content ul li img{
+        width: 24px;
+    }
+    .content ul li .fa-figma{
+        font-size: 24px;
+    }
+    .content ul{
+        padding-left: 10px;
+        padding-right: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    .designer-side-container{
+        padding-left: 0;
+    }
+    
+}
+
+
+
+
+@media screen and (max-width: 424px) and (min-width: 350px){
+
+    .navbar{
+        position: absolute;
+        left: -300px;
+        top: 0;
+        z-index: 999;
+        width: 300px;
+        height: 100vh;
+        background: url(images/nav_background.png);
+        transition: 0.2s;
+        box-shadow: none;
+    
+    }
+    
+    #nav-check:checked ~ .navbar{
+        left: 0;
+    }
+    .nav-logo{
+        display: block;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 25px;
+    }
+    .nav-logo img{
+        width: 70%;
+    }
+    nav .nav-section a{
+        margin-bottom: 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    nav .nav-section{
+        display: block;
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+    .hamburger{
+        display: block;
+        float: right;
+        padding-right: 10px;
+        
+    }
+    .pager{
+        display: block;
+    }
+    .nav-projects{
+        display: block;
+    }
+    .header-container{
+        align-items: center;
+        justify-content: space-between;
+    }
+    .page-container{
+        display: none;
+    }
+    .nav-social-container{
+        display: block;
+        padding-top: 50px;
+    }
+    .nav-social-container ul{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+   
+    .icon-bar{
+        display: none;
+    }
+    main{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 50px;
+        text-align: center;
+        
+    }
+
+    .about-me-container{
+        flex-direction: column;
+    }
+    .about-me-container .vertical-hr{
+        border: none;
+        border-left: 0px solid hsla(200, 10%, 50%,100);
+        height: 1px;
+        width: 100%; 
+        box-shadow: rgba(90, 181, 255, 0.4) 5px 5px, rgba(89, 23, 255, 0.3) 10px 10px, rgba(255, 6, 172, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        padding-right: 1px;
+    }
+    .designer-side-container{
+        padding-left: 0;
+    }
+    .developer-info h3p{
+        font-size: 30px;
+    }
+    .developer-info p{
+        font-size: 20px;
+    }
+    .content ul li{
+        font-size: 12px;
+    }
+    .content ul li img{
+        width: 20px;
+    }
+    .content ul li .fa-figma{
+        font-size: 20px;
+    }
+    .content ul{
+        padding: 0 10px;
+    }
+}
+
+
+@media screen and (max-width: 349px) and (min-width: 200px){
+
+    .navbar{
+        position: absolute;
+        left: -300px;
+        top: 0;
+        z-index: 999;
+        width: 250px;
+        height: 100vh;
+        background: url(images/nav_background.png);
+        transition: 0.2s;
+        box-shadow: none;
+    
+    }
+    
+    #nav-check:checked ~ .navbar{
+        left: 0;
+    }
+    .nav-logo{
+        display: block;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 25px;
+    }
+    .nav-logo img{
+        width: 70%;
+    }
+    nav .nav-section a{
+        width: 250px;
+        margin-bottom: 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    nav .nav-section{
+        display: block;
+        padding: 0 00px;
+        margin-top: 30px;
+    }
+    .hamburger{
+        display: block;
+        float: right;
+        padding-right: 10px;
+        
+    }
+    .pager{
+        display: block;
+        width: 250px;
+    }
+    .nav-projects{
+        display: block;
+    }
+    .header-container{
+        align-items: center;
+        justify-content: space-between;
+    }
+    .page-container{
+        display: none;
+    }
+    .nav-social-container{
+        display: block;
+        padding-top: 50px;
+        width: 250px;
+    }
+    .nav-social-container ul{
+        display: flex;
+        justify-content: center;
+        
+        padding: 0;
+    }
+
+    .icon-bar{
+        display: none;
+    }
+    main{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 30px;
+        text-align: center;
+    }
+    main h2{
+        font-size: 30px;
+    }
+    .developer-info h3{
+        font-size: 24px;
+    }
+    .about-me-container{
+        flex-direction: column;
+    }
+    .about-me-container .vertical-hr{
+        border: none;
+        border-left: 0px solid hsla(200, 10%, 50%,100);
+        height: 1px;
+        width: 100%; 
+        box-shadow: rgba(90, 181, 255, 0.4) 5px 5px, rgba(89, 23, 255, 0.3) 10px 10px, rgba(255, 6, 172, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        padding-right: 1px;
+    }
+    .designer-side-container{
+        padding-left: 0;
+    }
+    .developer-info p{
+        font-size: 16px;
+    }
+    .content ul li{
+        font-size: 10px;
+    }
+    .content ul li img{
+        width: 24px;
+    }
+    .content ul li .fa-figma{
+        font-size: 24px;
+    }
+    .content ul{
+        padding: 0 1px;
+        flex-wrap: wrap;
+    }
+    .developer-more .view-more-btn{
+        font-size: 16px;
+    }
+    
+}
+
